@@ -1,7 +1,12 @@
-const express = require('express');
-const app = express();
+import express from 'express';
+import dotenv from 'dotenv';
 
-app.use(express.json());
+// Load environment variables
+dotenv.config();
+
+// Initialize Express
+const app = express();
+app.use(express.json()); // Middleware to parse JSON bodies
 
 // In-memory storage
 let students = new Map();
